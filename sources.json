@@ -1,0 +1,47 @@
+{
+  "comment": [
+    "Third-party skills, MCP servers and subagents are LISTED here, never copied",
+    "into this repo. No vendor/ directory, no sync script, no pinned shas, no",
+    "licence matrix. An entry is a pointer plus the setup steps a student needs,",
+    "exactly like a third-party MCP entry. build.mjs merges these into",
+    "registry.json alongside the skills this repo actually owns."
+  ],
+  "sources": [
+    {
+      "id": "anthropic-pdf",
+      "type": "skill",
+      "name": "PDF",
+      "description": "Read, extract, split, merge, fill, rotate and OCR PDF files. Useful alongside exam-prep when a student has a past paper as a scanned PDF rather than as text.",
+      "author": {
+        "name": "Anthropic",
+        "url": "https://github.com/anthropics"
+      },
+      "license": "Source-available (proprietary — see the upstream LICENSE)",
+      "url": "https://github.com/anthropics/skills/tree/main/skills/pdf",
+      "subjects": ["general"],
+      "platforms": ["claude-code", "codex", "cursor"],
+      "setup": {
+        "url": "https://github.com/anthropics/skills/tree/main/skills/pdf",
+        "steps": [
+          "Clone https://github.com/anthropics/skills or download the skills/pdf directory.",
+          "Copy skills/pdf into your agent's skills directory (~/.claude/skills/pdf for Claude Code).",
+          "Install its Python dependencies: pip install pypdf pdfplumber.",
+          "Start a new session and ask your agent to work with a PDF."
+        ]
+      },
+      "review": {
+        "status": "reviewed",
+        "accesses": [
+          "PDF files you point it at",
+          "your local shell, to run Python PDF tooling"
+        ]
+      },
+      "notes": [
+        "Listed rather than shipped for the usual reason, made concrete: this skill",
+        "is source-available, not open source, so vendoring it into an MIT repo",
+        "would be a licence problem. Not offered on the studyhub platform because",
+        "the app injects a SKILL.md body and cannot execute the scripts this one needs."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "anthropic-pdf",
+      "type": "skill",
+      "name": "PDF",
+      "description": "Read, extract, split, merge, fill, rotate and OCR PDF files. Useful alongside exam-prep when a student has a past paper as a scanned PDF rather than as text.",
+      "author": {
+        "name": "Anthropic",
+        "url": "https://github.com/anthropics"
+      },
+      "license": "Source-available (proprietary — see the upstream LICENSE)",
+      "url": "https://github.com/anthropics/skills/tree/main/skills/pdf",
+      "subjects": [
+        "general"
+      ],
+      "platforms": [
+        "claude-code",
+        "codex",
+        "cursor"
+      ],
+      "body": null,
+      "setup": {
+        "url": "https://github.com/anthropics/skills/tree/main/skills/pdf",
+        "steps": [
+          "Clone https://github.com/anthropics/skills or download the skills/pdf directory.",
+          "Copy skills/pdf into your agent's skills directory (~/.claude/skills/pdf for Claude Code).",
+          "Install its Python dependencies: pip install pypdf pdfplumber.",
+          "Start a new session and ask your agent to work with a PDF."
+        ]
+      },
+      "review": {
+        "status": "reviewed",
+        "accesses": [
+          "PDF files you point it at",
+          "your local shell, to run Python PDF tooling"
+        ]
+      }
+    },
+    {
+      "id": "exam-prep",
+      "type": "skill",
+      "name": "Exam Prep",
+      "description": "Build practice question sets from a course, module or topic, mark a student's answers, diagnose which topics are weak, and plan revision against an exam date. Use when a student wants to practise, be quizzed, sit a mock paper, check answers, or work out what to revise before an exam.",
+      "author": {
+        "name": "StudyHub",
+        "url": "https://github.com/studyhub"
+      },
+      "license": "MIT",
+      "subjects": [
+        "general"
+      ],
+      "platforms": [
+        "claude-code",
+        "codex",
+        "cursor",
+        "studyhub"
+      ],
+      "body": "skills/exam-prep/SKILL.md",
+      "setup": null,
+      "review": {
+        "status": "own",
+        "accesses": []
+      }
+    }
+  ]
+}

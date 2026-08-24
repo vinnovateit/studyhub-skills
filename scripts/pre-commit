@@ -1,0 +1,12 @@
+#!/bin/sh
+# Runs the same two checks as .github/workflows/ci.yml, before the commit
+# instead of after the push. Install it with:
+#
+#   ln -sf ../../scripts/pre-commit .git/hooks/pre-commit
+#
+# Both scripts are dependency-free, so this costs about a second and there is
+# nothing to install first. Bypass with `git commit --no-verify` when you know
+# you are committing a work in progress.
+set -e
+npm run validate
+npm run check

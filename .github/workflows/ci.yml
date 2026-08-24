@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      # No install step: the scripts are dependency-free on purpose, so a PR
+      # that only touches markdown does not wait on a lockfile.
+      - name: Portability contract and registry schema
+        run: npm run validate
+      - name: Generated files are current
+        run: npm run check

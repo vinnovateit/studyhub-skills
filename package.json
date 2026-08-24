@@ -1,0 +1,17 @@
+{
+  "name": "studyhub-skills",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "description": "Portable Agent Skills for StudyHub, plus a directory of third-party ones.",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/build.mjs --check",
+    "validate": "node scripts/validate.mjs",
+    "test": "npm run validate && npm run check"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
