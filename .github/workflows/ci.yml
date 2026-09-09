@@ -19,3 +19,7 @@ jobs:
         run: npm run validate
       - name: Generated files are current
         run: npm run check
+      - name: PR form validation
+        run: npm run check-pr
+      - name: Registry determinism check
+        run: npm run test-determinism

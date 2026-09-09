@@ -9,7 +9,9 @@
     "build": "node scripts/build.mjs",
     "check": "node scripts/build.mjs --check",
     "validate": "node scripts/validate.mjs",
-    "test": "npm run validate && npm run check"
+    "check-pr": "node scripts/check-pr-form.mjs",
+    "test-determinism": "node scripts/test-determinism.mjs",
+    "test": "npm run validate && npm run check && npm run check-pr && npm run test-determinism"
   },
   "engines": {
     "node": ">=20"

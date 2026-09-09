@@ -1,0 +1,6 @@
+{
+  "name": "pdf-tools",
+  "version": "0.1.0",
+  "description": "Read, extract, split, merge, fill, rotate and OCR PDF files for past papers and slide decks.",
+  "author": "Anthropic / StudyHub"
+}

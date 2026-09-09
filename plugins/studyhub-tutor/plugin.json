@@ -1,0 +1,6 @@
+{
+  "name": "studyhub-tutor",
+  "version": "0.1.0",
+  "description": "Interactive Socratic tutor mode with method-before-answer pedagogy and step-by-step hint escalation.",
+  "author": "StudyHub"
+}

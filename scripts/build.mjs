@@ -10,7 +10,8 @@
 // anything. CI uses that; it is what stops a hand-edited generated block from
 // silently drifting.
 
-import { readFileSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { dirname } from "node:path";
 import {
   BEGIN,
   END,
@@ -44,7 +45,10 @@ function emit(path, next) {
   // every file as stale.
   if (current !== null && current.replace(/\r\n/g, "\n") === next) return;
   changed.push(path);
-  if (!check) writeFileSync(path, next);
+  if (!check) {
+    mkdirSync(dirname(path), { recursive: true });
+    writeFileSync(path, next);
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -113,6 +117,66 @@ entries.sort((a, b) => a.id.localeCompare(b.id));
 // No timestamp: the registry must regenerate byte-for-byte so --check is
 // meaningful and diffs only ever show real changes.
 emit("registry.json", JSON.stringify({ version: 1, entries }, null, 2) + "\n");
+
+// ---------------------------------------------------------------------------
+// 3. Build Claude Code plugin bundles and marketplace.json
+
+const pluginBundles = [
+  {
+    name: "exam-prep",
+    version: "0.1.0",
+    description: "Build practice question sets, mark answers, diagnose weak topics, and plan revision against exam dates.",
+    author: OWNER.name,
+    category: "education",
+    skillId: "exam-prep"
+  },
+  {
+    name: "studyhub-tutor",
+    version: "0.1.0",
+    description: "Interactive Socratic tutor mode with method-before-answer pedagogy and step-by-step hint escalation.",
+    author: OWNER.name,
+    category: "education",
+    skillId: "exam-prep"
+  },
+  {
+    name: "pdf-tools",
+    version: "0.1.0",
+    description: "Read, extract, split, merge, fill, rotate and OCR PDF files for past papers and slide decks.",
+    author: "Anthropic / StudyHub",
+    category: "utilities",
+    skillId: null
+  }
+];
+
+// Single-channel marketplace catalog
+const marketplace = {
+  version: 1,
+  channel: "stable",
+  plugins: pluginBundles.map((p) => ({
+    name: p.name,
+    version: p.version,
+    description: p.description,
+    author: p.author,
+    category: p.category,
+    source: `./plugins/${p.name}`
+  }))
+};
+marketplace.plugins.sort((a, b) => a.name.localeCompare(b.name));
+emit(".claude-plugin/marketplace.json", JSON.stringify(marketplace, null, 2) + "\n");
+
+for (const p of pluginBundles) {
+  const manifest = {
+    name: p.name,
+    version: p.version,
+    description: p.description,
+    author: p.author
+  };
+  emit(`plugins/${p.name}/plugin.json`, JSON.stringify(manifest, null, 2) + "\n");
+  if (p.skillId && ids.includes(p.skillId)) {
+    const skillContent = readFileSync(skillPath(p.skillId), "utf8").replace(/\r\n/g, "\n");
+    emit(`plugins/${p.name}/SKILL.md`, skillContent);
+  }
+}
 
 // ---------------------------------------------------------------------------
 

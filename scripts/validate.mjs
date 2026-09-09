@@ -6,7 +6,7 @@
 // a thing that works in one client and breaks in another, or a thing the app
 // cannot honour because it injects the body and nothing else.
 
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { BEGIN, END, parseSkill, readJSON, skillIds, skillPath } from "./lib.mjs";
 
 // Frontmatter keys that some clients honour and others ignore. Allowing one
@@ -14,6 +14,9 @@ import { BEGIN, END, parseSkill, readJSON, skillIds, skillPath } from "./lib.mjs
 const ALLOWED_KEYS = new Set(["name", "description"]);
 // Files that pin a skill to one vendor's runtime.
 const VENDOR_FILES = ["agents/openai.yaml"];
+// Permitted entries inside skills/<id>/. The body must stand alone, while depth
+// belongs in references/, assets/ or scripts/ for CLI agents that can read them.
+const PERMITTED_SKILL_CHILDREN = new Set(["SKILL.md", "references", "assets", "scripts"]);
 // The app injects the body into a prompt, so a long one crowds out the
 // conversation. Depth belongs in references/, which the app never reads.
 const MAX_BODY_LINES = 200;
@@ -40,6 +43,19 @@ for (const id of ids) {
   if (!frontmatter) {
     fail(path, "has no YAML frontmatter");
     continue;
+  }
+
+  // Non-portable frontmatter checks: reject context: fork, when_to_use, allowed-tools
+  const fmMatch = /^---\r?\n([\s\S]*?)\r?\n---/.exec(text);
+  const rawFm = fmMatch ? fmMatch[1] : "";
+  if (/\bcontext\s*:\s*fork\b/i.test(rawFm)) {
+    fail(path, 'non-portable frontmatter "context: fork" is rejected — skills must run across all clients');
+  }
+  if (/\bwhen_to_use\s*:/i.test(rawFm)) {
+    fail(path, 'non-portable frontmatter "when_to_use" is rejected — use description instead');
+  }
+  if (/\ballowed-tools\s*:/i.test(rawFm)) {
+    fail(path, 'non-portable frontmatter "allowed-tools" is rejected — tool permissions belong in client runtime');
   }
 
   for (const key of Object.keys(frontmatter)) {
@@ -70,6 +86,14 @@ for (const id of ids) {
   const lines = body.trim().split(/\r?\n/).length;
   if (lines > MAX_BODY_LINES) {
     fail(path, `body is ${lines} lines, over the ${MAX_BODY_LINES} limit — move depth into references/`);
+  }
+
+  // Permitted directory contents: only SKILL.md, references/, assets/, scripts/
+  const children = readdirSync(`skills/${id}`);
+  for (const child of children) {
+    if (!PERMITTED_SKILL_CHILDREN.has(child)) {
+      fail(`skills/${id}/${child}`, `is not permitted — only SKILL.md, references/, assets/, and scripts/ are allowed`);
+    }
   }
 
   for (const vendorFile of VENDOR_FILES) {

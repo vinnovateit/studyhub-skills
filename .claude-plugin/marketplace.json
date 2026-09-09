@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "channel": "stable",
+  "plugins": [
+    {
+      "name": "exam-prep",
+      "version": "0.1.0",
+      "description": "Build practice question sets, mark answers, diagnose weak topics, and plan revision against exam dates.",
+      "author": "StudyHub",
+      "category": "education",
+      "source": "./plugins/exam-prep"
+    },
+    {
+      "name": "pdf-tools",
+      "version": "0.1.0",
+      "description": "Read, extract, split, merge, fill, rotate and OCR PDF files for past papers and slide decks.",
+      "author": "Anthropic / StudyHub",
+      "category": "utilities",
+      "source": "./plugins/pdf-tools"
+    },
+    {
+      "name": "studyhub-tutor",
+      "version": "0.1.0",
+      "description": "Interactive Socratic tutor mode with method-before-answer pedagogy and step-by-step hint escalation.",
+      "author": "StudyHub",
+      "category": "education",
+      "source": "./plugins/studyhub-tutor"
+    }
+  ]
+}
