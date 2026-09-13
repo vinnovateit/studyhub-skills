@@ -9,6 +9,7 @@
 import { execFileSync } from "node:child_process";
 import { readFileSync, writeFileSync } from "node:fs";
 import { createHash } from "node:crypto";
+import { BEGIN, END, MODES_FILE, skillIds, skillPath } from "./lib.mjs";
 
 function sha256(content) {
   return createHash("sha256").update(content).digest("hex");
@@ -59,3 +60,46 @@ try {
 console.log("OK — Proved byte-identical output across multiple build runs.");
 console.log(`  registry.json SHA-256:       ${hashReg1}`);
 console.log(`  marketplace.json SHA-256:    ${hashMark1}`);
+
+// 4. Mode-block byte-identity: after build.mjs injects shared/modes.md into
+// every skill body, the injected block itself must be byte-identical across
+// all of them. Drift here is invisible in review (each body still reads
+// fine on its own) and only a test catches it — see shreya.md's "mode-block
+// byte-identity test" requirement.
+console.log("=== Testing mode-block byte-identity across skill bodies ===");
+
+const modes = readFileSync(MODES_FILE, "utf8").replace(/\r\n/g, "\n").trim();
+const ids = skillIds();
+if (ids.length === 0) {
+  console.error("No skills found under skills/ — nothing to compare.");
+  process.exit(1);
+}
+
+const blocksByHash = new Map();
+for (const id of ids) {
+  const text = readFileSync(skillPath(id), "utf8").replace(/\r\n/g, "\n");
+  const begin = text.indexOf(BEGIN);
+  const end = text.indexOf(END);
+  if (begin === -1 || end === -1) {
+    console.error(`skills/${id}/SKILL.md: missing the shared/modes.md markers`);
+    process.exit(1);
+  }
+  const block = text.slice(begin + BEGIN.length, end).trim();
+  if (block !== modes) {
+    console.error(`skills/${id}/SKILL.md: injected mode block does not match shared/modes.md`);
+    process.exit(1);
+  }
+  const hash = sha256(block);
+  if (!blocksByHash.has(hash)) blocksByHash.set(hash, []);
+  blocksByHash.get(hash).push(id);
+}
+
+if (blocksByHash.size > 1) {
+  console.error("Determinism failure: mode blocks differ across skill bodies!");
+  for (const [hash, matchingIds] of blocksByHash) {
+    console.error(`  ${hash}: ${matchingIds.join(", ")}`);
+  }
+  process.exit(1);
+}
+
+console.log(`OK — mode block is byte-identical across ${ids.length} skill bod${ids.length === 1 ? "y" : "ies"}: ${ids.join(", ")}.`);
