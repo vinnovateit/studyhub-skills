@@ -10,6 +10,8 @@
     "check": "node scripts/build.mjs --check",
     "validate": "node scripts/validate.mjs",
     "test": "npm run validate && npm run check"
+    "test:triggers": "node scripts/test-triggers.mjs",
+    "test": "npm run validate && npm run check && npm run test:triggers"
   },
   "engines": {
     "node": ">=20"

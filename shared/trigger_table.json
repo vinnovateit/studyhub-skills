@@ -1,0 +1,87 @@
+{
+  "description": "Trigger evaluation table for StudyHub AI Skills. Each skill has 3 positive triggers that must fire it, and 9 negative triggers (from its 3 sibling skills) that must not.",
+  "version": "1.0.0",
+  "skills": [
+    {
+      "id": "exam-prep",
+      "name": "Exam Prep",
+      "positive_triggers": [
+        "I have my CAT 2 exams next week, can you quiz me with past paper questions from module 3?",
+        "Simulate a 50-mark practice exam paper for data structures with a timer",
+        "Give me the most repeated questions asked in previous years for Operating Systems"
+      ],
+      "negative_triggers": [
+        "Turn these lecture notes on database normalization into an Anki flashcard deck",
+        "Make me 15 quick cloze deletion flashcards to memorize memory management definitions",
+        "Generate review flashcards with question on front and short answer on back for Unit 1",
+        "Critique the introduction of my research paper and tell me where I need citations",
+        "Help me structure an argumentative literature review outline comparing microservices and monoliths",
+        "Review my essay thesis statement and give me Socratic feedback on the flow",
+        "I tried solving this Fourier transform but got stuck at step 4, find where my math went wrong",
+        "Walk me through this circuit analysis problem one hint at a time without spoiling the final answer",
+        "Step-by-step derivation for calculating time complexity using master theorem on T(n)=2T(n/2)+n"
+      ]
+    },
+    {
+      "id": "flashcard-builder",
+      "name": "Flashcard Builder",
+      "positive_triggers": [
+        "Turn these lecture notes on database normalization into an Anki flashcard deck",
+        "Make me 15 quick cloze deletion flashcards to memorize memory management definitions",
+        "Generate review flashcards with question on front and short answer on back for Unit 1"
+      ],
+      "negative_triggers": [
+        "I have my CAT 2 exams next week, can you quiz me with past paper questions from module 3?",
+        "Simulate a 50-mark practice exam paper for data structures with a timer",
+        "Give me the most repeated questions asked in previous years for Operating Systems",
+        "Critique the introduction of my research paper and tell me where I need citations",
+        "Help me structure an argumentative literature review outline comparing microservices and monoliths",
+        "Review my essay thesis statement and give me Socratic feedback on the flow",
+        "I tried solving this Fourier transform but got stuck at step 4, find where my math went wrong",
+        "Walk me through this circuit analysis problem one hint at a time without spoiling the final answer",
+        "Step-by-step derivation for calculating time complexity using master theorem on T(n)=2T(n/2)+n"
+      ]
+    },
+    {
+      "id": "academic-writing",
+      "name": "Academic Writing",
+      "positive_triggers": [
+        "Critique the introduction of my research paper and tell me where I need citations",
+        "Help me structure an argumentative literature review outline comparing microservices and monoliths",
+        "Review my essay thesis statement and give me Socratic feedback on the flow"
+      ],
+      "negative_triggers": [
+        "I have my CAT 2 exams next week, can you quiz me with past paper questions from module 3?",
+        "Simulate a 50-mark practice exam paper for data structures with a timer",
+        "Give me the most repeated questions asked in previous years for Operating Systems",
+        "Turn these lecture notes on database normalization into an Anki flashcard deck",
+        "Make me 15 quick cloze deletion flashcards to memorize memory management definitions",
+        "Generate review flashcards with question on front and short answer on back for Unit 1",
+        "I tried solving this Fourier transform but got stuck at step 4, find where my math went wrong",
+        "Walk me through this circuit analysis problem one hint at a time without spoiling the final answer",
+        "Step-by-step derivation for calculating time complexity using master theorem on T(n)=2T(n/2)+n"
+      ]
+    },
+    {
+      "id": "stem-solver",
+      "name": "STEM Solver",
+      "positive_triggers": [
+        "I tried solving this Fourier transform but got stuck at step 4, find where my math went wrong",
+        "Walk me through this circuit analysis problem one hint at a time without spoiling the final answer",
+        "Step-by-step derivation for calculating time complexity using master theorem on T(n)=2T(n/2)+n"
+      ],
+      "negative_triggers": [
+        "I have my CAT 2 exams next week, can you quiz me with past paper questions from module 3?",
+        "Simulate a 50-mark practice exam paper for data structures with a timer",
+        "Give me the most repeated questions asked in previous years for Operating Systems",
+        "Turn these lecture notes on database normalization into an Anki flashcard deck",
+        "Make me 15 quick cloze deletion flashcards to memorize memory management definitions",
+        "Generate review flashcards with question on front and short answer on back for Unit 1",
+        "Critique the introduction of my research paper and tell me where I need citations",
+        "Help me structure an argumentative literature review outline comparing microservices and monoliths",
+        "Review my essay thesis statement and give me Socratic feedback on the flow"
+      ]
+    }
+  ]
+}
+
