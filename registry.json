@@ -2,6 +2,32 @@
   "version": 1,
   "entries": [
     {
+      "id": "academic-writing",
+      "type": "skill",
+      "name": "Academic Writing",
+      "description": "Plan and draft academic writing — essays, lab reports, literature reviews, short answers — from a student's sources and argument. Outlines and Socratic-critiques a thesis in tutor mode; drafts prose with every claim needing a source flagged in draft mode. Use when a student wants help structuring, drafting, citing, or reviewing a piece of academic writing.",
+      "author": {
+        "name": "StudyHub",
+        "url": "https://github.com/studyhub"
+      },
+      "license": "MIT",
+      "subjects": [
+        "general"
+      ],
+      "platforms": [
+        "claude-code",
+        "codex",
+        "cursor",
+        "studyhub"
+      ],
+      "body": "skills/academic-writing/SKILL.md",
+      "setup": null,
+      "review": {
+        "status": "own",
+        "accesses": []
+      }
+    },
+    {
       "id": "anthropic-pdf",
       "type": "skill",
       "name": "PDF",
@@ -58,6 +84,32 @@
         "studyhub"
       ],
       "body": "skills/exam-prep/SKILL.md",
+      "setup": null,
+      "review": {
+        "status": "own",
+        "accesses": []
+      }
+    },
+    {
+      "id": "flashcard-builder",
+      "type": "skill",
+      "name": "Flashcard Builder",
+      "description": "Build spaced-repetition flashcards from a course, topic, or a student's own draft cards. Critiques student-drafted cards for cloze quality and one-fact-per-card discipline, or generates a full deck with an Anki export and a review schedule. Use when a student wants flashcards, wants their flashcards checked, wants an Anki deck, or wants a spaced-repetition schedule.",
+      "author": {
+        "name": "StudyHub",
+        "url": "https://github.com/studyhub"
+      },
+      "license": "MIT",
+      "subjects": [
+        "general"
+      ],
+      "platforms": [
+        "claude-code",
+        "codex",
+        "cursor",
+        "studyhub"
+      ],
+      "body": "skills/flashcard-builder/SKILL.md",
       "setup": null,
       "review": {
         "status": "own",

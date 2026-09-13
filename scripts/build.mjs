@@ -145,6 +145,22 @@ const pluginBundles = [
     author: "Anthropic / StudyHub",
     category: "utilities",
     skillId: null
+  },
+  {
+    name: "flashcard-builder",
+    version: "0.1.0",
+    description: "Build spaced-repetition flashcards, an Anki export and a review schedule, or critique a student's own drafted cards.",
+    author: OWNER.name,
+    category: "education",
+    skillId: "flashcard-builder"
+  },
+  {
+    name: "academic-writing",
+    version: "0.1.0",
+    description: "Outline, Socratically critique and draft academic writing with every claim needing a source flagged.",
+    author: OWNER.name,
+    category: "education",
+    skillId: "academic-writing"
   }
 ];
 
