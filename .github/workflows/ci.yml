@@ -19,3 +19,9 @@ jobs:
         run: npm run validate
       - name: Generated files are current
         run: npm run check
+      - name: PR form validation
+        run: npm run check-pr
+      - name: review.accesses is present on every mcp entry
+        run: npm run check-review-accesses
+      - name: Registry determinism check
+        run: npm run test-determinism

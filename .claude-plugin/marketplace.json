@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "channel": "stable",
+  "plugins": [
+    {
+      "name": "academic-writing",
+      "version": "0.1.0",
+      "description": "Outline, Socratically critique and draft academic writing with every claim needing a source flagged.",
+      "author": "StudyHub",
+      "category": "education",
+      "source": "./plugins/academic-writing"
+    },
+    {
+      "name": "exam-prep",
+      "version": "0.1.0",
+      "description": "Build practice question sets, mark answers, diagnose weak topics, and plan revision against exam dates.",
+      "author": "StudyHub",
+      "category": "education",
+      "source": "./plugins/exam-prep"
+    },
+    {
+      "name": "flashcard-builder",
+      "version": "0.1.0",
+      "description": "Build spaced-repetition flashcards, an Anki export and a review schedule, or critique a student's own drafted cards.",
+      "author": "StudyHub",
+      "category": "education",
+      "source": "./plugins/flashcard-builder"
+    },
+    {
+      "name": "pdf-tools",
+      "version": "0.1.0",
+      "description": "Read, extract, split, merge, fill, rotate and OCR PDF files for past papers and slide decks.",
+      "author": "Anthropic / StudyHub",
+      "category": "utilities",
+      "source": "./plugins/pdf-tools"
+    },
+    {
+      "name": "studyhub-tutor",
+      "version": "0.1.0",
+      "description": "Interactive Socratic tutor mode with method-before-answer pedagogy and step-by-step hint escalation.",
+      "author": "StudyHub",
+      "category": "education",
+      "source": "./plugins/studyhub-tutor"
+    }
+  ]
+}
