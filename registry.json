@@ -5,7 +5,7 @@
       "id": "academic-writing",
       "type": "skill",
       "name": "Academic Writing",
-      "description": "Plan and draft academic writing — essays, lab reports, literature reviews, short answers — from a student's sources and argument. Outlines and Socratic-critiques a thesis in tutor mode; drafts prose with every claim needing a source flagged in draft mode. Use when a student wants help structuring, drafting, citing, or reviewing a piece of academic writing.",
+      "description": "Plan, critique and draft essays, lab reports, literature reviews and short answers from a student's argument, data and sources. Use clear, direct prose while preserving technical precision and evidence. Use when a student wants help structuring, drafting, citing or revising academic writing, building a claim-source evidence matrix or reviewing a specific writing concern.",
       "author": {
         "name": "StudyHub",
         "url": "https://github.com/studyhub"
@@ -68,7 +68,7 @@
       "id": "exam-prep",
       "type": "skill",
       "name": "Exam Prep",
-      "description": "Build practice question sets from a course, module or topic, mark a student's answers, diagnose which topics are weak, and plan revision against an exam date. Use when a student wants to practise, be quizzed, sit a mock paper, check answers, or work out what to revise before an exam.",
+      "description": "Build practice question sets from a course, module or topic, mark a student's answers, diagnose which topics are weak, and plan revision against an exam date. Use when a student wants to practise, be quizzed, sit a mock paper, check answers, update revision checkpoints or plan practice sessions. Use syllabus-map for a complete syllabus and past-question checklist. Use last-minute-revision for a compact night-before revision sheet.",
       "author": {
         "name": "StudyHub",
         "url": "https://github.com/studyhub"
@@ -110,6 +110,58 @@
         "studyhub"
       ],
       "body": "skills/flashcard-builder/SKILL.md",
+      "setup": null,
+      "review": {
+        "status": "own",
+        "accesses": []
+      }
+    },
+    {
+      "id": "last-minute-revision",
+      "type": "skill",
+      "name": "Last Minute Revision",
+      "description": "Turn a syllabus and past papers into a compact nested revision checklist with asked-topic evidence, explicit OOS portions and a realistic time budget. Adapt to revision checkpoints and full, two-hour or 15-minute views. Use for last-minute revision, a night-before overview, a crash sheet or a quick version of a syllabus map. Use syllabus-map for the detailed coverage audit and exam-prep for interactive questions or mock papers.",
+      "author": {
+        "name": "StudyHub",
+        "url": "https://github.com/studyhub"
+      },
+      "license": "MIT",
+      "subjects": [
+        "general"
+      ],
+      "platforms": [
+        "claude-code",
+        "codex",
+        "cursor",
+        "studyhub"
+      ],
+      "body": "skills/last-minute-revision/SKILL.md",
+      "setup": null,
+      "review": {
+        "status": "own",
+        "accesses": []
+      }
+    },
+    {
+      "id": "syllabus-map",
+      "type": "skill",
+      "name": "Syllabus Map",
+      "description": "Build a complete nested checklist of syllabus modules, topics and subtopics. Map past-paper questions to each topic with paper references and marks, recurring question patterns and revision checkpoints. Compare syllabus versions and mark confirmed OOS portions. Use for a detailed syllabus breakdown, coverage audit, version comparison or list of everything asked. Use last-minute-revision for a compact revision version.",
+      "author": {
+        "name": "StudyHub",
+        "url": "https://github.com/studyhub"
+      },
+      "license": "MIT",
+      "subjects": [
+        "general"
+      ],
+      "platforms": [
+        "claude-code",
+        "codex",
+        "cursor",
+        "studyhub"
+      ],
+      "body": "skills/syllabus-map/SKILL.md",
       "setup": null,
       "review": {
         "status": "own",
