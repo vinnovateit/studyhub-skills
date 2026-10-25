@@ -3,10 +3,20 @@ name: exam-prep
 description: Build practice question sets from a course, module or topic, mark a
   student's answers, diagnose which topics are weak, and plan revision against an
   exam date. Use when a student wants to practise, be quizzed, sit a mock paper,
-  check answers, or work out what to revise before an exam.
+  check answers, update revision checkpoints or plan practice sessions. Use
+  syllabus-map for a complete syllabus and past-question checklist. Use last-minute-revision for a compact
+  night-before revision sheet.
 ---
 
 # Exam prep
+
+## Choose the requested output
+
+Keep this skill focused on practice, marking and revision schedules. Use
+`syllabus-map` for a detailed nested topic checklist with past-paper evidence
+and explicit OOS portions. Use `last-minute-revision` for the compact version.
+If those skills are unavailable, provide the requested artifact from supplied
+sources. Do not turn a checklist request into an unsolicited quiz.
 
 ## Sources — run this first, every time
 
@@ -57,6 +67,20 @@ Switch when the student asks, in either direction. Never switch silently.
    topic already answered poorly.
 7. **Close with a diagnosis**: topics secure, topics shaky, what to revise next.
 
+## Revision checkpoints
+
+Accept `[UNTOUCHED]`, `[SHAKY]` and `[CONFIDENT]` using the topic path and syllabus
+version from the student's map. Use `[UNREPORTED]` when unknown. Keep reported
+status separate from observed performance. Do not infer weakness from missing
+history. A checked box does not establish mastery.
+
+After marking, update the affected topic with the result and whether hints
+were needed. Suggest `[CONFIDENT]` after two distinct correct unaided answers.
+Label this as session evidence, not proof of lasting mastery. Keep other topics
+unchanged. Use shaky topics to adjust the next practice or revision block.
+On request, return a compact checkpoint table for the map or last-minute sheet.
+Keep it in the conversation. Do not claim cross-session or StudyHub persistence.
+
 ## Draft mode
 
 Produce a complete paper:
@@ -67,6 +91,8 @@ Produce a complete paper:
 
 ## Output rules
 
+- Use terse questions, marking notes and next actions. Preserve marks, reasoning,
+  conditions and source references. Omit filler and repeated recaps.
 - **Maths in KaTeX-compatible LaTeX.** Inline as `$...$`, display as `$$...$$`.
 - **Cite every retrieved question**: course code, module, topic title, and the
   paper and year when it came from one.

@@ -9,9 +9,23 @@ carries **material** — the real question bank, past papers and course outlines
 They are deliberately independent: a skill works without the server, and the
 server works without skills.
 
-**This is a starting point.** One skill of our own and one third-party listing,
-enough to establish the shape. Three more skills (`flashcard-builder`,
-`academic-writing`, `stem-solver`) follow the same structure.
+Choose from five StudyHub skills:
+
+| Skill | Use it for |
+| --- | --- |
+| `exam-prep` | Practice, answer marking, mock papers and session revision checkpoints. |
+| `syllabus-map` | Nested topic coverage, question patterns, syllabus version changes and explicit OOS portions. |
+| `last-minute-revision` | Full, two-hour or 15-minute views with checkpoints and explicit deferred topics. |
+| `flashcard-builder` | Flashcard creation, card review, Anki export and spaced repetition. |
+| `academic-writing` | Terse academic prose, claim-source matrices and focused reviews of argument, evidence, structure or prose. |
+
+Distinguish confirmed OOS content from uncertain scope. Keep topics with no
+observed exam questions visible in both syllabus checklists. Treat a topic
+outside one exam's modules separately from a topic outside the course syllabus.
+
+Keep checkpoint status in the conversation. Copy the checkpoint table into a
+new session to carry it forward. These skills do not save student progress to
+StudyHub. Selective revision views list every deferred topic.
 
 ## What is here
 

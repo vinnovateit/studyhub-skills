@@ -123,16 +123,32 @@ emit("registry.json", JSON.stringify({ version: 1, entries }, null, 2) + "\n");
 
 const pluginBundles = [
   {
+    name: "syllabus-map",
+    version: "0.2.0",
+    description: "Map syllabus topics, question patterns and revision checkpoints. Compare syllabus versions with explicit OOS portions.",
+    author: OWNER.name,
+    category: "education",
+    skillId: "syllabus-map"
+  },
+  {
+    name: "last-minute-revision",
+    version: "0.2.0",
+    description: "Build full, two-hour or 15-minute revision views with exam evidence, checkpoints and explicit deferred topics.",
+    author: OWNER.name,
+    category: "education",
+    skillId: "last-minute-revision"
+  },
+  {
     name: "exam-prep",
-    version: "0.1.0",
-    description: "Build practice question sets, mark answers, diagnose weak topics, and plan revision against exam dates.",
+    version: "0.2.0",
+    description: "Build practice sets, mark answers and update session checkpoints to plan revision against exam dates.",
     author: OWNER.name,
     category: "education",
     skillId: "exam-prep"
   },
   {
     name: "studyhub-tutor",
-    version: "0.1.0",
+    version: "0.2.0",
     description: "Interactive Socratic tutor mode with method-before-answer pedagogy and step-by-step hint escalation.",
     author: OWNER.name,
     category: "education",
@@ -156,8 +172,8 @@ const pluginBundles = [
   },
   {
     name: "academic-writing",
-    version: "0.1.0",
-    description: "Outline, Socratically critique and draft academic writing with every claim needing a source flagged.",
+    version: "0.3.0",
+    description: "Draft terse academic prose, build claim-source matrices and review argument, evidence, structure or prose.",
     author: OWNER.name,
     category: "education",
     skillId: "academic-writing"
