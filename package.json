@@ -12,7 +12,8 @@
     "check-pr": "node scripts/check-pr-form.mjs",
     "check-review-accesses": "node scripts/check-review-accesses.mjs",
     "test-determinism": "node scripts/test-determinism.mjs",
-    "test": "npm run validate && npm run check && npm run check-pr && npm run check-review-accesses && npm run test-determinism"
+    "test": "npm run validate && npm run check && npm run check-pr && npm run check-review-accesses && npm run test-determinism && npm run test:triggers",
+    "test:triggers": "node scripts/test-triggers.mjs"
   },
   "engines": {
     "node": ">=20"
