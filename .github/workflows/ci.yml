@@ -25,3 +25,5 @@ jobs:
         run: npm run check-review-accesses
       - name: Registry determinism check
         run: npm run test-determinism
+      - name: Trigger examples and exclusions
+        run: npm run test:triggers

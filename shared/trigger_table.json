@@ -1,0 +1,121 @@
+{
+  "description": "Trigger examples for every current StudyHub skill. Each skill has three positive examples and the other skills' examples as negatives.",
+  "version": "1.0.0",
+  "skills": [
+    {
+      "id": "academic-writing",
+      "name": "Academic Writing",
+      "positive_triggers": [
+        "Critique the introduction of my research paper and tell me where I need citations",
+        "Help me structure an argumentative literature review outline comparing microservices and monoliths",
+        "Review my essay thesis statement and give me Socratic feedback on the flow"
+      ],
+      "negative_triggers": [
+        "I have my CAT 2 exams next week, can you quiz me with past paper questions from module 3?",
+        "Simulate a 50-mark practice exam paper for data structures with a timer",
+        "Mark my answers to these Operating Systems practice questions and explain my mistakes",
+        "Turn these lecture notes on database normalization into an Anki flashcard deck",
+        "Make me 15 quick cloze deletion flashcards to memorize memory management definitions",
+        "Generate review flashcards with question on front and short answer on back for Unit 1",
+        "Turn my syllabus map into a compact night-before revision sheet",
+        "I have two hours left. Make a concise topic checklist with time budgets and past-paper evidence",
+        "Give me a 15-minute crash sheet from this syllabus and these past papers",
+        "Build a complete nested checklist from this syllabus and map each past-paper question to its topic",
+        "Compare these two Operating Systems syllabus versions and mark topics that are out of scope",
+        "Audit every assessed module against these past papers with question references and marks"
+      ]
+    },
+    {
+      "id": "exam-prep",
+      "name": "Exam Prep",
+      "positive_triggers": [
+        "I have my CAT 2 exams next week, can you quiz me with past paper questions from module 3?",
+        "Simulate a 50-mark practice exam paper for data structures with a timer",
+        "Mark my answers to these Operating Systems practice questions and explain my mistakes"
+      ],
+      "negative_triggers": [
+        "Critique the introduction of my research paper and tell me where I need citations",
+        "Help me structure an argumentative literature review outline comparing microservices and monoliths",
+        "Review my essay thesis statement and give me Socratic feedback on the flow",
+        "Turn these lecture notes on database normalization into an Anki flashcard deck",
+        "Make me 15 quick cloze deletion flashcards to memorize memory management definitions",
+        "Generate review flashcards with question on front and short answer on back for Unit 1",
+        "Turn my syllabus map into a compact night-before revision sheet",
+        "I have two hours left. Make a concise topic checklist with time budgets and past-paper evidence",
+        "Give me a 15-minute crash sheet from this syllabus and these past papers",
+        "Build a complete nested checklist from this syllabus and map each past-paper question to its topic",
+        "Compare these two Operating Systems syllabus versions and mark topics that are out of scope",
+        "Audit every assessed module against these past papers with question references and marks"
+      ]
+    },
+    {
+      "id": "flashcard-builder",
+      "name": "Flashcard Builder",
+      "positive_triggers": [
+        "Turn these lecture notes on database normalization into an Anki flashcard deck",
+        "Make me 15 quick cloze deletion flashcards to memorize memory management definitions",
+        "Generate review flashcards with question on front and short answer on back for Unit 1"
+      ],
+      "negative_triggers": [
+        "Critique the introduction of my research paper and tell me where I need citations",
+        "Help me structure an argumentative literature review outline comparing microservices and monoliths",
+        "Review my essay thesis statement and give me Socratic feedback on the flow",
+        "I have my CAT 2 exams next week, can you quiz me with past paper questions from module 3?",
+        "Simulate a 50-mark practice exam paper for data structures with a timer",
+        "Mark my answers to these Operating Systems practice questions and explain my mistakes",
+        "Turn my syllabus map into a compact night-before revision sheet",
+        "I have two hours left. Make a concise topic checklist with time budgets and past-paper evidence",
+        "Give me a 15-minute crash sheet from this syllabus and these past papers",
+        "Build a complete nested checklist from this syllabus and map each past-paper question to its topic",
+        "Compare these two Operating Systems syllabus versions and mark topics that are out of scope",
+        "Audit every assessed module against these past papers with question references and marks"
+      ]
+    },
+    {
+      "id": "last-minute-revision",
+      "name": "Last Minute Revision",
+      "positive_triggers": [
+        "Turn my syllabus map into a compact night-before revision sheet",
+        "I have two hours left. Make a concise topic checklist with time budgets and past-paper evidence",
+        "Give me a 15-minute crash sheet from this syllabus and these past papers"
+      ],
+      "negative_triggers": [
+        "Critique the introduction of my research paper and tell me where I need citations",
+        "Help me structure an argumentative literature review outline comparing microservices and monoliths",
+        "Review my essay thesis statement and give me Socratic feedback on the flow",
+        "I have my CAT 2 exams next week, can you quiz me with past paper questions from module 3?",
+        "Simulate a 50-mark practice exam paper for data structures with a timer",
+        "Mark my answers to these Operating Systems practice questions and explain my mistakes",
+        "Turn these lecture notes on database normalization into an Anki flashcard deck",
+        "Make me 15 quick cloze deletion flashcards to memorize memory management definitions",
+        "Generate review flashcards with question on front and short answer on back for Unit 1",
+        "Build a complete nested checklist from this syllabus and map each past-paper question to its topic",
+        "Compare these two Operating Systems syllabus versions and mark topics that are out of scope",
+        "Audit every assessed module against these past papers with question references and marks"
+      ]
+    },
+    {
+      "id": "syllabus-map",
+      "name": "Syllabus Map",
+      "positive_triggers": [
+        "Build a complete nested checklist from this syllabus and map each past-paper question to its topic",
+        "Compare these two Operating Systems syllabus versions and mark topics that are out of scope",
+        "Audit every assessed module against these past papers with question references and marks"
+      ],
+      "negative_triggers": [
+        "Critique the introduction of my research paper and tell me where I need citations",
+        "Help me structure an argumentative literature review outline comparing microservices and monoliths",
+        "Review my essay thesis statement and give me Socratic feedback on the flow",
+        "I have my CAT 2 exams next week, can you quiz me with past paper questions from module 3?",
+        "Simulate a 50-mark practice exam paper for data structures with a timer",
+        "Mark my answers to these Operating Systems practice questions and explain my mistakes",
+        "Turn these lecture notes on database normalization into an Anki flashcard deck",
+        "Make me 15 quick cloze deletion flashcards to memorize memory management definitions",
+        "Generate review flashcards with question on front and short answer on back for Unit 1",
+        "Turn my syllabus map into a compact night-before revision sheet",
+        "I have two hours left. Make a concise topic checklist with time budgets and past-paper evidence",
+        "Give me a 15-minute crash sheet from this syllabus and these past papers"
+      ]
+    }
+  ]
+}
